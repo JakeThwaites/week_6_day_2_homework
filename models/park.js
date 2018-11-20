@@ -17,4 +17,13 @@ Park.prototype.removeDinosaur = function (dinosaur) {
   }
 };
 
+Park.prototype.expectedVisitors = function () {
+  let totalVisitors = 0;
+
+  for (dinosaur of this.dinosaurs) {
+    totalVisitors += dinosaur.guestsAttractedPerDay;
+  }
+  return totalVisitors;
+};
+
 module.exports = Park;
