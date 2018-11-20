@@ -17,7 +17,7 @@ Park.prototype.removeDinosaur = function (dinosaur) {
   }
 };
 
-Park.prototype.expectedVisitors = function () {
+Park.prototype.expectedVisitorsPerDay = function () {
   let totalVisitors = 0;
 
   for (dinosaur of this.dinosaurs) {
@@ -25,5 +25,12 @@ Park.prototype.expectedVisitors = function () {
   }
   return totalVisitors;
 };
+
+Park.prototype.expectedVisitorsPerYear = function () {
+  let totalPerDay = this.expectedVisitorsPerDay();
+  return (totalPerDay * 365);
+};
+
+
 
 module.exports = Park;
