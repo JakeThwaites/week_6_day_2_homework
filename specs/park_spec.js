@@ -59,6 +59,15 @@ describe('Park', function() {
     assert.strictEqual(actual, (90 * 365) )
   });
 
+  it('should be able to calculate the expected ticket sales per year', function() {
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    const actual = park.expectedYearlySales();
+    assert.strictEqual(actual, 328500)
+  })
+
+// visitors * price
+
 
   it('should be able to find the dinosaur that attracts the most visitors', function() {
 

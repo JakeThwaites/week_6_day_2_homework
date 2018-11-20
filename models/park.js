@@ -31,6 +31,15 @@ Park.prototype.expectedVisitorsPerYear = function () {
   return (totalPerDay * 365);
 };
 
+Park.prototype.expectedYearlySales = function () {
+  let totalYearlyVisitors = this.expectedVisitorsPerYear();
+
+  let totalYearlyIncome = this.ticketPrice * totalYearlyVisitors;
+
+  return totalYearlyIncome;
+
+};
+
 
 
 module.exports = Park;
