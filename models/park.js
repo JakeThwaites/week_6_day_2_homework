@@ -50,5 +50,15 @@ Park.prototype.dinosaursOfSpecies = function (species) {
   return dinosaursToReturn;
 };
 
+Park.prototype.removeDinosaursOfSpecies = function (species) {
+  let dinosaursToRemove = this.dinosaursOfSpecies(species);
+
+  for (dinosaur of this.dinosaurs) {
+    if (dinosaursToRemove.includes(dinosaur) ) {
+      this.dinosaurs.splice(dinosaur, 1);
+    }
+  }
+};
+
 
 module.exports = Park;
