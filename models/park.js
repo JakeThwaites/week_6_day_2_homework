@@ -60,5 +60,28 @@ Park.prototype.removeDinosaursOfSpecies = function (species) {
   }
 };
 
+Park.prototype.showDietTypes = function () {
+
+  let carnivores = 0;
+  let herbivores = 0;
+  let omnivores = 0;
+
+  for (dinosaur of this.dinosaurs) {
+    if (dinosaur.diet === 'carnivore') {
+      carnivores += 1;
+    }
+    else if (dinosaur.diet === 'herbivore') {
+      herbivores += 1;
+    }
+    else if (dinosaur.diet === 'omnivore') {
+      omnivores += 1;
+    };
+  }
+
+  let dietTypes = {'carnivore': carnivores, 'herbivore': herbivores, 'omnivore': omnivores};
+
+  return dietTypes;
+};
+
 
 module.exports = Park;

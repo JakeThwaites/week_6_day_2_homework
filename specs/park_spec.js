@@ -14,7 +14,7 @@ describe('Park', function() {
 
     dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
 
-    dinosaur2 = new Dinosaur('raptor', 'carnivore', 40);
+    dinosaur2 = new Dinosaur('supersaurus', 'herbivore', 40);
 
     dinosaur3 = new Dinosaur('t-rex', 'carnivore', 50);
   });
@@ -90,8 +90,16 @@ describe('Park', function() {
     park.addDinosaur(dinosaur2);
     park.addDinosaur(dinosaur3);
     park.removeDinosaursOfSpecies('t-rex');
-    actual = park.dinosaurs.length;
+    const actual = park.dinosaurs.length;
     assert.strictEqual(actual, 1);
   });
+
+  it('should be able to map the various diet types of dinosaurs', function() {
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    const actual = park.showDietTypes();
+    assert.deepStrictEqual(actual, {'carnivore': 2, 'herbivore': 1, 'omnivore': 0})
+  })
 
 });
