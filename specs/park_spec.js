@@ -6,6 +6,8 @@ describe('Park', function() {
 
   let park;
   let dinosaur1;
+  let dinosaur2;
+  let dinosaur3;
 
   beforeEach(function () {
     park = new Park("Jake's Cool Dinosaur Park", 10, []);
@@ -13,6 +15,8 @@ describe('Park', function() {
     dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
 
     dinosaur2 = new Dinosaur('raptor', 'carnivore', 40);
+
+    dinosaur3 = new Dinosaur('t-rex', 'carnivore', 50);
   });
 
   it('should have a name', function() {
@@ -73,7 +77,13 @@ describe('Park', function() {
 
   });
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species', function() {
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    const actual = park.dinosaursOfSpecies('t-rex').length;
+    assert.strictEqual(actual, 2);
+  });
 
   it('should be able to remove all dinosaurs of a particular species');
 

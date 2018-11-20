@@ -40,6 +40,15 @@ Park.prototype.expectedYearlySales = function () {
 
 };
 
+Park.prototype.dinosaursOfSpecies = function (species) {
+  let dinosaursToReturn = [];
+  for (dinosaur of this.dinosaurs) {
+    if (dinosaur.species === species) {
+      dinosaursToReturn.push(dinosaur)
+    }
+  }
+  return dinosaursToReturn;
+};
 
 
 module.exports = Park;
